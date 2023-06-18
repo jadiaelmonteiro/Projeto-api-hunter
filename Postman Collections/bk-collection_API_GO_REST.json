@@ -1,0 +1,505 @@
+{
+	"info": {
+		"_postman_id": "21fa72d7-8430-4c3f-8e02-34f3d605dee3",
+		"name": "Go Rest API",
+		"description": "Curso de testes automatizados disponibilizado pela verdanatech, aulas da udemy.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuários",
+			"item": [
+				{
+					"name": "Criar",
+					"item": [
+						{
+							"name": "Test Case - criar",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "7aecd0af-5eda-426f-a7bf-d81d1683c8b9",
+										"exec": [
+											"pm.iterationData.get(\"name_user\");\r",
+											"pm.iterationData.get(\"gender_user\");\r",
+											"pm.iterationData.get(\"email_user\");\r",
+											"pm.iterationData.get(\"status_user\");"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "c7f49c39-4ce9-48e2-ae88-23468ff2d7b7",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{name_user}}\",\n    \"gender\": \"{{gender_user}}\",\n    \"email\": \"{{email_user}}\",\n    \"status\": \"{{status_user}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url_base}}/users",
+								"description": "Teste case para criação de usuários no recurso de usuários.\n\nResultados esperados:\n\n- Response code: 200\n- String \"code\" no corpo da requisição\n- Tempo de resposta < 2000ms"
+							},
+							"response": [
+								{
+									"id": "772cd421-42de-467a-96ea-cad623f9d69d",
+									"name": "criar",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Tico tico no fubáaaaaaaasdsdsdsd\",\n    \"gender\": \"male\",\n    \"email\": \"tatatataasdasdasdsdsdd.ramakrishna@15ce.com\",\n    \"status\": \"active\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{url_base}}/users"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 14 Jun 2023 00:31:28 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"c449a15232e402aaacaed9f43dd2e742\""
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "set-cookie",
+											"value": "_gorest_session=Cc4Llj2YmryHD5rIhpE4yjjmIXDT58L0nr7sGVoN%2Bt8Oor2pxG24BDhJ7eZ4DU9lNs5Tbm0ppvgZuSLo137sTps0cHf3SaLa8BqQ8RVnrrrCAzZt8a1lI7ZSyBwg5qt8240WfXeTX8%2B3o9bhVIG%2Baft9iSpWp3vmkGCzttkcFCFreaewHj%2FkZUWM8utu4tDgcSiIxawGPbgkVg2ibc6JXiUZy07FkYtjZ73pKrmsW3lY2%2FaJBxjUvdn8LUH7UGVC69kRcT1hTq4ArTXtZrZofNdajT0I9ys%3D--s%2Bo2cIMyeBAyo%2FPa--hgnycp53uxLuDg%2FFCZA8jg%3D%3D; path=/; HttpOnly; SameSite=Lax"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "x-ratelimit-limit",
+											"value": "90"
+										},
+										{
+											"key": "x-ratelimit-remaining",
+											"value": "89"
+										},
+										{
+											"key": "x-ratelimit-reset",
+											"value": "1"
+										},
+										{
+											"key": "x-request-id",
+											"value": "9703ce77-735c-4ce2-98de-595b760f5d9d"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.072777"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "0"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=mTCH5UTKkChAkrDUt%2FDFhXSd1pZ10EQaxmyJEG5Mf7X5XURyicHscuS8lzrhu5PyQWR1thLogquxBR6g%2FZ0QTVH2HJFuZ5GkfRllr4xs4t1mg2y4jpgjMHBdKKSi2yI%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "7d6e78759c2a0320-GRU"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"code\": 422,\n    \"meta\": null,\n    \"data\": [\n        {\n            \"field\": \"email\",\n            \"message\": \"has already been taken\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					],
+					"id": "4bbad1b6-7b2c-4ede-9b7a-a16a8b8163bc"
+				},
+				{
+					"name": "Alterar",
+					"item": [
+						{
+							"name": "Test Case - atualizar",
+							"id": "89f296e4-2541-4390-ad8a-7a516f9f3646",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": "{{url_base}}/users/{{id_user}}",
+								"description": "Teste case atualizar usuáio no recurso de usuários.\n\nResultados esperados:\n\n- Response code: 200\n- String \"code\" no corpo da requisição\n- Tempo de resposta < 2000ms"
+							},
+							"response": []
+						}
+					],
+					"id": "140ba734-c7e1-4b0d-8497-70065437a670"
+				},
+				{
+					"name": "Excluir",
+					"item": [
+						{
+							"name": "excluir pelo id",
+							"id": "20ac0c00-0c39-4ba9-9e2b-95a75de1eae5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{url_base}}/users/{{id_user}}",
+								"description": "Teste case deletar usuáio no recurso de usuários.\n\nResultados esperados:\n\n- Response code: 200\n- String \"code\" no corpo da requisição\n- Tempo de resposta < 2000ms"
+							},
+							"response": []
+						}
+					],
+					"id": "69357521-1913-46d2-a77b-fe413962618a"
+				},
+				{
+					"name": "Buscar",
+					"item": [
+						{
+							"name": "buscar pelo id",
+							"id": "0ecef832-12e9-4591-8d80-2b7e1719ef77",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url_base}}/users/{{id_user}}"
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"id": "a7fbdcad-1d48-46c2-847c-d3be493a4a6e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					],
+					"id": "23ec0266-1520-424a-b4c3-7056ebc4dff9"
+				}
+			],
+			"id": "20f85cb1-0be9-4461-bdd7-15f43e025815",
+			"description": "Testando documentação das requisições de usuários",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c4a698e3-556e-4db8-b99c-565affd3cce8",
+						"type": "text/javascript",
+						"exec": [
+							"// postman.setNextRequest(\"buscar comentário pelo id\");"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "44da9abf-26c9-454d-a116-e1882e6b7c4c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Criar",
+					"item": [
+						{
+							"name": "criar",
+							"id": "26705853-3543-4b2e-98f2-fd92fb891882",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 2882711,\n    \"title\": \"Tico tico asds.\",\n    \"body\": \"Uia lá lá lá.\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url_base}}/posts"
+							},
+							"response": []
+						}
+					],
+					"id": "f53df3ec-d49e-44f7-806f-62aea2bd0999"
+				},
+				{
+					"name": "Buscar",
+					"item": [
+						{
+							"name": "buscar pelo id",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "9beee045-9cdd-4ae9-ac8f-699a2496754a",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "a274e5ed-e9ca-427d-8025-b8d342b41ce4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url_base}}/posts/{{id_post}}"
+							},
+							"response": []
+						}
+					],
+					"id": "dcd4eff5-edad-4516-9b0f-a361326ca11a"
+				},
+				{
+					"name": "Excluir",
+					"item": [
+						{
+							"name": "excluir pelo id",
+							"id": "9ea1fc23-40b6-4b37-a628-8e9da6f1d952",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{url_base}}/posts/{{id_post}}"
+							},
+							"response": []
+						}
+					],
+					"id": "e5d36e4c-894f-4568-8e91-f47fa65d1384"
+				}
+			],
+			"id": "fa2ae585-27c6-493a-82b9-cb9d8530012e"
+		},
+		{
+			"name": "Comentários",
+			"item": [
+				{
+					"name": "Criar",
+					"item": [
+						{
+							"name": "criar",
+							"id": "a7b72a77-56dc-489d-838d-1de5de5e9dc4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"post_id\": 44483,\n    \"name\": \"Sweta aaaaaaaaaaaaaaaaaaa\",\n    \"email\": \"sweta_chaturvedcvcvi@greenfelder.example\",\n    \"body\": \"Temporibus quo atque. Tempora doloremque sed.\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url_base}}/comments"
+							},
+							"response": []
+						}
+					],
+					"id": "469dfb21-8744-4ce3-8313-f58053f5a522"
+				},
+				{
+					"name": "Buscar",
+					"item": [
+						{
+							"name": "buscar comentário pelo id",
+							"id": "95dc3483-c48c-4e0c-b589-4cdb3be2c840",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url_base}}/comments/{{id_comentario}}"
+							},
+							"response": []
+						}
+					],
+					"id": "9f9f7e37-5e46-4a2a-8862-bf461adcbaef"
+				},
+				{
+					"name": "Excluir",
+					"item": [
+						{
+							"name": "excluir pelo id",
+							"id": "b0d0a1d7-598c-4de1-89ca-8e9c48300cff",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{url_base}}/comments/{{id_comentario}}"
+							},
+							"response": []
+						}
+					],
+					"id": "3c6a41e4-c4df-4a97-97c8-7eccdc2e758a"
+				}
+			],
+			"id": "cad7be75-1213-4fa3-9d8d-785cc06b387a"
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "{{jwt}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "4814ded1-9e57-480d-b927-fc0a8aeb627c",
+				"type": "text/javascript",
+				"exec": [
+					"console.log(pm.info.requestName);"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "cc05ebe3-ffed-447a-b2fb-27e62501eccf",
+				"type": "text/javascript",
+				"exec": [
+					"pm.test('Todas as requisições deram sucesso', () => {",
+					"    pm.response.to.have.status(200);",
+					"});",
+					"",
+					"pm.test('Corpo da requisição deve conter a palavra code', () => {",
+					"    pm.expect(pm.response.text()).to.include(\"code\");",
+					"});",
+					"",
+					"pm.test('Resposta não pode utrapassar 2 segundos', () => {",
+					"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+					"});",
+					"",
+					"if(pm.request.method == 'POST') {",
+					"    pm.test(\"Staus da requisição deve ser 200, 201 ou 202\", () => {",
+					"        pm.expect(pm.response.code).to.be.oneOf([200,201,202]);",
+					"    });",
+					"}"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "55cd8f42-9045-4692-b151-879b19b17009",
+			"key": "id_user",
+			"value": "2861508",
+			"type": "string"
+		},
+		{
+			"id": "11a27da4-0aa1-4aa2-a152-61bb5aadf5ca",
+			"key": "id_post",
+			"value": "44483",
+			"type": "string"
+		},
+		{
+			"id": "4a814f9d-e3c5-488f-bec3-2bb8a79d8a42",
+			"key": "id_comentario",
+			"value": "40179",
+			"type": "string"
+		}
+	]
+}
