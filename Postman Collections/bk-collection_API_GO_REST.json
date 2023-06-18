@@ -248,7 +248,8 @@
 							},
 							"request": {
 								"method": "GET",
-								"header": []
+								"header": [],
+								"url": "{{url_base}}/users"
 							},
 							"response": []
 						}
@@ -484,19 +485,19 @@
 	],
 	"variable": [
 		{
-			"id": "ceaf84d5-a034-461b-9bce-a690114dfdc6",
+			"id": "c10de5c2-9c2e-4e92-999c-8e6bc0642f0d",
 			"key": "id_user",
 			"value": "2861508",
 			"type": "string"
 		},
 		{
-			"id": "0b5e015a-a80d-4698-96cd-5efea94ef6ab",
+			"id": "a8f74607-8272-46a4-bcb9-ea179e212d53",
 			"key": "id_post",
 			"value": "44483",
 			"type": "string"
 		},
 		{
-			"id": "c2d90068-b29e-4608-a647-ea0ab4a65284",
+			"id": "cd37d51d-c914-4c00-934f-1c4b3fbc9a7a",
 			"key": "id_comentario",
 			"value": "40179",
 			"type": "string"
