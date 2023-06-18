@@ -336,7 +336,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "4a28a239-95dc-49dc-99a8-88b11cdc3c91",
+				"id": "9cbb1293-d298-4a3f-b486-16f9b86aec27",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -346,7 +346,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "5dcd063f-cee1-48d8-8797-8a8cdf5c4c40",
+				"id": "c5134b90-5b8d-4dc6-8e71-1afebb5b51af",
 				"type": "text/javascript",
 				"exec": [
 					"//Teste para requisisão GET",
@@ -364,7 +364,13 @@
 					"//Teste para requisisão GET E POST",
 					"if(pm.request.method == 'POST' || 'GET') ",
 					"{",
-					"    let id_lead = pm.response.body.data.id;",
+					"    let lead_id = pm.response.json().data.id;",
+					"    let lead_lists_id = pm.response.json().data.id;",
+					"",
+					"    pm.environment.set(\"lead_id\", lead_id);",
+					"    pm.environment.set(\"leads_lists_id\", lead_id);",
+					"",
+					"",
 					"    pm.test(\"Resposta não pode ultrapassar 2 segundos\", () => {",
 					"        pm.expect(pm.response.responseTime).to.be.below(2000);",
 					"    });",
