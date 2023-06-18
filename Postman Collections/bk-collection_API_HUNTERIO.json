@@ -327,7 +327,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "3b5cfbdc-2904-4248-a598-f1822c1d9404",
+				"id": "d9365988-4d51-4c90-9624-82e420c9e3ce",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -337,16 +337,9 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "90b698c9-b470-43c9-b43c-8466d4d828bc",
+				"id": "c756fe1c-e77d-423f-b40e-b182cdc060d2",
 				"type": "text/javascript",
 				"exec": [
-					"//Teste para requisisão GET E POST",
-					"if(pm.request.method == \"POST\" || pm.request.method == \"GET\") {",
-					"    pm.test(\"Resposta não pode ultrapassar 2 segundos\", () => {",
-					"        pm.expect(pm.response.responseTime).to.be.below(2000);",
-					"    });",
-					"}",
-					"",
 					"//Teste para requisisão GET",
 					"if(pm.request.method == \"GET\") {",
 					"    pm.test(\"Status code deve ser 200\", () => {",
@@ -355,6 +348,13 @@
 					"",
 					"    pm.test(\"Status code deve conter string 'OK'\", () => {",
 					"        pm.response.to.have.status(\"OK\");",
+					"    });",
+					"}",
+					"",
+					"//Teste para requisisão GET E POST",
+					"if(pm.request.method == \"POST\" || pm.request.method == \"GET\") {",
+					"    pm.test(\"Resposta não pode ultrapassar 2 segundos\", () => {",
+					"        pm.expect(pm.response.responseTime).to.be.below(2000);",
 					"    });",
 					"}",
 					"",
