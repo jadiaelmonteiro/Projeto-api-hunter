@@ -327,7 +327,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "19b8f887-3ac6-405e-923a-6d63a86baae7",
+				"id": "3b5cfbdc-2904-4248-a598-f1822c1d9404",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -337,12 +337,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "19fa6a4d-cdfb-4892-9d41-e853a24d1700",
+				"id": "90b698c9-b470-43c9-b43c-8466d4d828bc",
 				"type": "text/javascript",
 				"exec": [
 					"//Teste para requisisão GET E POST",
 					"if(pm.request.method == \"POST\" || pm.request.method == \"GET\") {",
-					"",
 					"    pm.test(\"Resposta não pode ultrapassar 2 segundos\", () => {",
 					"        pm.expect(pm.response.responseTime).to.be.below(2000);",
 					"    });",
