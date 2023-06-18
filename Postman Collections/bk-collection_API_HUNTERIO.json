@@ -326,7 +326,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8b3cb18e-727f-43d1-99f9-4787379488c6",
+				"id": "39c8407c-93a0-4e02-a91a-e70679186703",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -336,7 +336,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "d40612a2-8334-4135-99cd-f21d3e88826e",
+				"id": "a208faf2-fba8-4439-a17e-cfa3bb79c8da",
 				"type": "text/javascript",
 				"exec": [
 					"//Teste para requisisão GET",
@@ -355,6 +355,7 @@
 					"",
 					"    if(pm.info.requestName == 'Criar lead') {",
 					"        let lead_id = pm.response.json().data.id;",
+					"        console.log(lead_id);",
 					"        pm.environment.set(\"lead_id\", lead_id);",
 					"    } else {",
 					"        let lead_lists_id = pm.response.json().data.id;",
