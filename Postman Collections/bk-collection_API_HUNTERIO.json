@@ -336,7 +336,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8d0de79d-d368-4e2d-8318-44c0515720c6",
+				"id": "1b96f25b-008f-43f2-90a3-3186e796b0a6",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -346,7 +346,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "e35cc8a8-de7c-424d-8138-2a022bde014d",
+				"id": "e45f1a19-c5b2-4c07-91e2-c9c3a6459f9e",
 				"type": "text/javascript",
 				"exec": [
 					"//Teste para requisisão GET",
@@ -368,11 +368,13 @@
 					"    if(pm.info.requestName == 'Criar lead') {",
 					"        let lead_id = pm.response.json().data.id;",
 					"        pm.environment.set(\"lead_id\", lead_id);",
-					"    }",
-					"    ",
-					"    if(pm.info.requestName == 'POST - Criar lead list') {",
-					"        let lead_lists_id = pm.response.json().data.id;",
+					"    } else {",
+					"                let lead_lists_id = pm.response.json().data.id;",
 					"        pm.environment.set(\"leads_lists_id\", lead_lists_id);",
+					"    }",
+					"",
+					"    if(pm.info.requestName == 'POST - Criar lead list') {",
+					"",
 					"    }",
 					"",
 					"    pm.test(\"Resposta não pode ultrapassar 2 segundos\", () => {",
