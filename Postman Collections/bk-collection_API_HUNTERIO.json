@@ -326,7 +326,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "39c8407c-93a0-4e02-a91a-e70679186703",
+				"id": "98cbd42f-07b1-4c82-8ff1-414da474257d",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -336,7 +336,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "a208faf2-fba8-4439-a17e-cfa3bb79c8da",
+				"id": "f592da6c-c4b3-4614-a295-511bf4f655a0",
 				"type": "text/javascript",
 				"exec": [
 					"//Teste para requisisão GET",
@@ -359,6 +359,8 @@
 					"        pm.environment.set(\"lead_id\", lead_id);",
 					"    } else {",
 					"        let lead_lists_id = pm.response.json().data.id;",
+					"        console.log(lead_lists_id);",
+					"",
 					"        pm.environment.set(\"leads_lists_id\", lead_lists_id);",
 					"    }",
 					"",
