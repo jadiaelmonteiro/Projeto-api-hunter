@@ -336,7 +336,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "9a94079a-7785-4ebd-b0ae-afcabbf987c6",
+				"id": "68071855-d20f-441b-8859-3f2afc12e69d",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -346,7 +346,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "bd41723f-c23e-4fc4-b483-b07f792005bd",
+				"id": "c124040a-4e31-44ee-83e9-7ce0f959f8e3",
 				"type": "text/javascript",
 				"exec": [
 					"//Teste para requisisão GET",
@@ -366,6 +366,8 @@
 					"{",
 					"    let lead_id = pm.response.json().data.id;",
 					"    pm.environment.set(\"lead_id\", lead_id);",
+					"    pm.environment.set(\"leads_lists_id\", lead_id);",
+					"",
 					"",
 					"    pm.test(\"Resposta não pode ultrapassar 2 segundos\", () => {",
 					"        pm.expect(pm.response.responseTime).to.be.below(2000);",
