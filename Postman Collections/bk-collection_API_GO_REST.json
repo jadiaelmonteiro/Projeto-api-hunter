@@ -196,6 +196,15 @@
 							"request": {
 								"method": "PUT",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": "{{url_base}}/users/{{id_user}}",
 								"description": "Teste case atualizar usuáio no recurso de usuários.\n\nResultados esperados:\n\n- Response code: 200\n- String \"code\" no corpo da requisição\n- Tempo de resposta < 2000ms"
 							},
@@ -485,19 +494,19 @@
 	],
 	"variable": [
 		{
-			"id": "c10de5c2-9c2e-4e92-999c-8e6bc0642f0d",
+			"id": "9514a540-a6eb-4352-b7af-17ce3d70acbf",
 			"key": "id_user",
 			"value": "2861508",
 			"type": "string"
 		},
 		{
-			"id": "a8f74607-8272-46a4-bcb9-ea179e212d53",
+			"id": "afa246c3-3787-4766-a16d-66de2145c9ce",
 			"key": "id_post",
 			"value": "44483",
 			"type": "string"
 		},
 		{
-			"id": "cd37d51d-c914-4c00-934f-1c4b3fbc9a7a",
+			"id": "6b0bb8df-43c8-4005-9ba6-aa466d942747",
 			"key": "id_comentario",
 			"value": "40179",
 			"type": "string"
