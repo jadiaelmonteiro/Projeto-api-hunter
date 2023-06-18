@@ -45,7 +45,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "7520912c-9b8c-41a8-844f-d43be0f8fd6a",
+								"id": "84b2f297-9503-49c0-9be8-da80f6aa8548",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -55,10 +55,20 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "dce175c0-2423-4dc1-9fa9-1417b744c49e",
+								"id": "71c88941-f63e-4af7-9198-7af7fa5b0acd",
 								"type": "text/javascript",
 								"exec": [
-									""
+									"pm.test(\"Status code deve ser 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code deve conter string 'OK'\", function () {",
+									"    pm.response.to.have.status(\"Ok\");",
+									"});",
+									"",
+									"pm.test(\"Resposta não pode ultrapassar 2 segundos\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+									"});"
 								]
 							}
 						}
