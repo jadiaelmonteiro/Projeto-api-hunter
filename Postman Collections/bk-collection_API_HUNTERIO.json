@@ -45,7 +45,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "84b2f297-9503-49c0-9be8-da80f6aa8548",
+								"id": "7520912c-9b8c-41a8-844f-d43be0f8fd6a",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -55,20 +55,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "71c88941-f63e-4af7-9198-7af7fa5b0acd",
+								"id": "dce175c0-2423-4dc1-9fa9-1417b744c49e",
 								"type": "text/javascript",
 								"exec": [
-									"pm.test(\"Status code deve ser 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"Status code deve conter string 'OK'\", function () {",
-									"    pm.response.to.have.status(\"Ok\");",
-									"});",
-									"",
-									"pm.test(\"Resposta não pode ultrapassar 2 segundos\", function () {",
-									"    pm.expect(pm.response.responseTime).to.be.below(2000);",
-									"});"
+									""
 								]
 							}
 						}
@@ -336,7 +326,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "1b96f25b-008f-43f2-90a3-3186e796b0a6",
+				"id": "a6677ceb-b209-4fa0-a968-b0dbafdff0fd",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -346,7 +336,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "e45f1a19-c5b2-4c07-91e2-c9c3a6459f9e",
+				"id": "9c4699ea-e5ba-4183-b1a8-1b49d299dd17",
 				"type": "text/javascript",
 				"exec": [
 					"//Teste para requisisão GET",
@@ -369,12 +359,8 @@
 					"        let lead_id = pm.response.json().data.id;",
 					"        pm.environment.set(\"lead_id\", lead_id);",
 					"    } else {",
-					"                let lead_lists_id = pm.response.json().data.id;",
+					"        let lead_lists_id = pm.response.json().data.id;",
 					"        pm.environment.set(\"leads_lists_id\", lead_lists_id);",
-					"    }",
-					"",
-					"    if(pm.info.requestName == 'POST - Criar lead list') {",
-					"",
 					"    }",
 					"",
 					"    pm.test(\"Resposta não pode ultrapassar 2 segundos\", () => {",
