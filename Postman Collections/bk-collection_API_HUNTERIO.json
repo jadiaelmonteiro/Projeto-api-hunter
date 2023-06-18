@@ -21,7 +21,8 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "{{url_base}}/leads"
+								"url": "{{url_base}}/leads",
+								"description": "Teste de pegar todos os leads"
 							},
 							"response": []
 						},
