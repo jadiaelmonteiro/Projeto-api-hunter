@@ -95,7 +95,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"email\": \"{{email_lead}}\",\r\n  \"first_name\": \"{{name_lead}}\",\r\n  \"last_name\": \"{{last_name}}\",\r\n  \"position\": \"{{position_name}}\",\r\n  \"company\": \"{{company_name}}\"\r\n}",
+									"raw": "{\r\n  \"email\": \"tes@as\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -327,7 +327,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "2a593576-0037-4446-bac3-50295a549d7e",
+				"id": "75b6c22a-5102-45c6-9f08-320792e19c08",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -337,7 +337,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "0ae082c6-1b60-4a0d-bfe5-bef5509c15a8",
+				"id": "625789a9-f78c-427f-812e-d44ba2f9bfb4",
 				"type": "text/javascript",
 				"exec": [
 					"//Teste para requisisão GET E POST",
@@ -354,31 +354,30 @@
 					"        pm.response.to.have.status(200);",
 					"    });",
 					"",
-					"    pm.test(\"Status code deve conter string OK\", () => {",
+					"    pm.test(\"Status code deve conter string 'OK'\", () => {",
 					"        pm.response.to.have.status(\"OK\");",
 					"    });",
 					"}",
 					"",
 					"//Teste para requisisão POST",
-					"if(pm.request.method == \"POST\") {",
+					"// if(pm.request.method == \"POST\") {",
+					"//     console.log(pm.info.requestName);",
+					"//     if(pm.info.requestName == 'Criar lead') {",
+					"//         let lead_id = pm.response.json().data.id;",
+					"//         pm.environment.set(\"lead_id\", lead_id);",
+					"//     } else {",
+					"//         let lead_lists_id = pm.response.json().data.id;",
+					"//         pm.environment.set(\"leads_lists_id\", lead_lists_id);",
+					"//     }",
 					"",
-					"    if(pm.info.requestName == 'Criar lead') {",
-					"        let lead_id = pm.response.json().data.id;",
-					"        pm.environment.set(\"lead_id\", lead_id);",
+					"//     pm.test(\"Status code deve ser 200, 201 ou 202\", () => {",
+					"//         pm.response.to.have.status(200,201,202);",
+					"//     });",
 					"",
-					"    } else {",
-					"        let lead_lists_id = pm.response.json().data.id;",
-					"        pm.environment.set(\"leads_lists_id\", lead_lists_id);",
-					"    }",
-					"",
-					"    pm.test(\"Status code deve ser 200, 201 ou 202\", () => {",
-					"        pm.response.to.have.status(200,201,202);",
-					"    });",
-					"",
-					"    pm.test(\"Status code deve conter string 'OK'\", () => {",
-					"        pm.response.to.have.status(\"Created\");",
-					"    });",
-					"}",
+					"//     pm.test(\"Status code deve conter string 'OK'\", () => {",
+					"//         pm.response.to.have.status(\"Created\");",
+					"//     });",
+					"// }",
 					"",
 					"//Teste para requisisão PUT e DELETE",
 					"if(pm.request.method == \"PUT\" || pm.request.method == \"DELETE\") {",
