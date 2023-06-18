@@ -327,7 +327,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "99a4f2b5-80e2-4dc6-af85-24a786c62d20",
+				"id": "065f8dfd-c599-464d-ade7-009cbf5ca73c",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -337,7 +337,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "2f119c17-29c6-4900-aad0-da8b470e6c3a",
+				"id": "74fffac9-a797-415d-b22d-14c9bd4e86c4",
 				"type": "text/javascript",
 				"exec": [
 					"//Teste para requisisão GET E POST",
@@ -354,17 +354,18 @@
 					"        pm.response.to.have.status(200);",
 					"    });",
 					"",
-					"    pm.test(\"Status code deve conter string 'OK'\", () => {",
-					"        pm.response.to.have.status(\"OK\");",
+					"    pm.test(\"Status code deve conter string OK\", () => {",
+					"        pm.response.to.have.status(\"Created\");",
 					"    });",
 					"}",
 					"",
 					"//Teste para requisisão POST",
 					"if(pm.request.method == \"POST\") {",
-					"    console.log(pm.info.requestName);",
+					"",
 					"    if(pm.info.requestName == 'Criar lead') {",
 					"        let lead_id = pm.response.json().data.id;",
 					"        pm.environment.set(\"lead_id\", lead_id);",
+					"",
 					"    } else {",
 					"        let lead_lists_id = pm.response.json().data.id;",
 					"        pm.environment.set(\"leads_lists_id\", lead_lists_id);",
