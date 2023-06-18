@@ -45,7 +45,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "84b2f297-9503-49c0-9be8-da80f6aa8548",
+								"id": "7520912c-9b8c-41a8-844f-d43be0f8fd6a",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -55,20 +55,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "71c88941-f63e-4af7-9198-7af7fa5b0acd",
+								"id": "dce175c0-2423-4dc1-9fa9-1417b744c49e",
 								"type": "text/javascript",
 								"exec": [
-									"pm.test(\"Status code deve ser 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"Status code deve conter string 'OK'\", function () {",
-									"    pm.response.to.have.status(\"Ok\");",
-									"});",
-									"",
-									"pm.test(\"Resposta não pode ultrapassar 2 segundos\", function () {",
-									"    pm.expect(pm.response.responseTime).to.be.below(2000);",
-									"});"
+									""
 								]
 							}
 						}
@@ -336,7 +326,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a6677ceb-b209-4fa0-a968-b0dbafdff0fd",
+				"id": "13cad1a0-6dc8-4290-81ab-902d924f49b3",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -346,7 +336,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "9c4699ea-e5ba-4183-b1a8-1b49d299dd17",
+				"id": "d8a8b748-30d3-4789-863c-e63512429146",
 				"type": "text/javascript",
 				"exec": [
 					"//Teste para requisisão GET",
@@ -396,7 +386,6 @@
 					"    pm.test(\"Status code deve ser 204\", () => {",
 					"        pm.response.to.have.status(204);",
 					"    });",
-					"",
 					"",
 					"    pm.test(\"A requisição deve retronar vazio\", () => {",
 					"        pm.expect(pm.response.text()).to.include(\"\");",
