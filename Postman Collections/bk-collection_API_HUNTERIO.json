@@ -95,7 +95,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"email\": \"tes@as\"\r\n}",
+									"raw": "{\r\n  \"email\": \"{{email_lead}}\",\r\n  \"first_name\": \"{{name_lead}}\",\r\n  \"last_name\": \"{{last_name}}\",\r\n  \"position\": \"{{position_name}}\",\r\n  \"company\": \"{{company_name}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -327,7 +327,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "99a4f2b5-80e2-4dc6-af85-24a786c62d20",
+				"id": "19b8f887-3ac6-405e-923a-6d63a86baae7",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -337,7 +337,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "2f119c17-29c6-4900-aad0-da8b470e6c3a",
+				"id": "19fa6a4d-cdfb-4892-9d41-e853a24d1700",
 				"type": "text/javascript",
 				"exec": [
 					"//Teste para requisisão GET E POST",
