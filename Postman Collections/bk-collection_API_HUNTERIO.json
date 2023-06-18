@@ -326,7 +326,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "4c641cc1-1dfe-4574-bcbc-bc3073de9f92",
+				"id": "f854feca-5ec5-48f9-9a05-57a6714f0173",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -336,7 +336,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "39ad4663-f0a5-4760-a796-2dacca1f22bc",
+				"id": "767c3ef3-7acd-4a58-951f-f3ebf6f61e41",
 				"type": "text/javascript",
 				"exec": [
 					"//Teste para requisisão GET",
@@ -351,15 +351,13 @@
 					"}",
 					"",
 					"//Teste para requisisão GET E POST",
-					"if(pm.request.method == \"POST\" || \"GET\") {",
+					"if(pm.request.method == 'POST' || 'GET') {",
 					"",
 					"    if(pm.info.requestName == 'Criar lead') {",
 					"        let lead_id = pm.response.json().data.id;",
-					"        console.log(lead_id);",
 					"        pm.environment.set(\"lead_id\", lead_id);",
 					"    } else {",
 					"        let lead_lists_id = pm.response.json().data.id;",
-					"        console.log(lead_lists_id);",
 					"        pm.environment.set(\"leads_lists_id\", lead_lists_id);",
 					"    }",
 					"",
@@ -369,7 +367,7 @@
 					"}",
 					"",
 					"//Teste para requisisão POST",
-					"if(pm.request.method == \"POST\") {",
+					"if(pm.request.method == 'POST') {",
 					"    pm.test(\"Status code deve ser 200, 201 ou 202\", () => {",
 					"        pm.response.to.have.status(200,201,202);",
 					"    });",
@@ -380,7 +378,7 @@
 					"}",
 					"",
 					"//Teste para requisisão PUT e DELETE",
-					"if(pm.request.method == \"PUT\" || \"DELETE\") {",
+					"if(pm.request.method == 'PUT' || 'DELETE') {",
 					"    pm.test(\"Status code deve ser 204\", () => {",
 					"        pm.response.to.have.status(204);",
 					"    });",
