@@ -327,7 +327,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "065f8dfd-c599-464d-ade7-009cbf5ca73c",
+				"id": "2a593576-0037-4446-bac3-50295a549d7e",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -337,7 +337,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "74fffac9-a797-415d-b22d-14c9bd4e86c4",
+				"id": "0ae082c6-1b60-4a0d-bfe5-bef5509c15a8",
 				"type": "text/javascript",
 				"exec": [
 					"//Teste para requisisão GET E POST",
@@ -355,7 +355,7 @@
 					"    });",
 					"",
 					"    pm.test(\"Status code deve conter string OK\", () => {",
-					"        pm.response.to.have.status(\"Created\");",
+					"        pm.response.to.have.status(\"OK\");",
 					"    });",
 					"}",
 					"",
