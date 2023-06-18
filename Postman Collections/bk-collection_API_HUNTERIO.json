@@ -326,7 +326,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "13cad1a0-6dc8-4290-81ab-902d924f49b3",
+				"id": "3434193b-4e64-4fbf-864a-a5f308b8d47d",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -336,7 +336,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "d8a8b748-30d3-4789-863c-e63512429146",
+				"id": "985119ea-5157-469e-91c5-358989f5f35f",
 				"type": "text/javascript",
 				"exec": [
 					"//Teste para requisisão GET",
@@ -387,7 +387,7 @@
 					"        pm.response.to.have.status(204);",
 					"    });",
 					"",
-					"    pm.test(\"A requisição deve retronar vazio\", () => {",
+					"    pm.test(\"A requisição deve retornar vazio\", () => {",
 					"        pm.expect(pm.response.text()).to.include(\"\");",
 					"    });",
 					"}",
