@@ -326,7 +326,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "122d00c5-25ad-465e-a83e-a42b8d73f9d4",
+				"id": "679c07a8-5ef7-451f-aac1-801830f58843",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -336,7 +336,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "6886415c-cbf4-4b94-8488-2ec63620329a",
+				"id": "b76256e3-af4c-4cde-8614-a872534f1445",
 				"type": "text/javascript",
 				"exec": [
 					"//Teste para requisisão GET E POST",
@@ -380,7 +380,7 @@
 					"}",
 					"",
 					"//Teste para requisisão PUT e DELETE",
-					"if(pm.request.method == \"PUT\" || \"DELETE\") {",
+					"if(pm.request.method == \"PUT\" || pm.request.method == \"DELETE\") {",
 					"    pm.test(\"Status code deve ser 204\", () => {",
 					"        pm.response.to.have.status(204);",
 					"    });",
