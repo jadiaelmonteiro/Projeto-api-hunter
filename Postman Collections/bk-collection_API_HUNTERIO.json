@@ -327,7 +327,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "6bba1376-1830-4fda-aebf-2bc8e79f4bd3",
+				"id": "3c85aa4a-6159-4fe8-bb02-022eb2e252f4",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -337,7 +337,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "58f0c0cb-b05d-49ec-8012-794c1b77ae31",
+				"id": "54272539-e465-44db-b359-6634c78b199c",
 				"type": "text/javascript",
 				"exec": [
 					"//Teste para requisisão GET",
@@ -372,7 +372,7 @@
 					"    }",
 					"",
 					"    pm.test(\"Status code deve ser 200, 201 ou 202\", () => {",
-					"        pm.response.to.have.status(",
+					"        pm.expect(pm.response.code).to.be.oneOf(",
 					"            [",
 					"                200,",
 					"                201,",
