@@ -327,7 +327,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "dd2e8d6e-b7f4-4def-b517-6ad01cc08be4",
+				"id": "148cb462-7319-4f30-b50e-1e6772022d94",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -337,7 +337,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "1bb68176-bf90-46d6-ab1b-f62243268442",
+				"id": "2f9be23b-ac7c-47f5-a37e-0d84f88f73eb",
 				"type": "text/javascript",
 				"exec": [
 					"//Teste para requisisão GET",
@@ -360,13 +360,12 @@
 					"",
 					"//Teste para requisisão POST",
 					"if(pm.request.method == \"POST\") {",
-					"",
 					"    if(pm.info.requestName == 'Criar lead') {",
 					"        let lead_id = pm.response.json().data.id;",
 					"        pm.environment.set(\"lead_id\", lead_id);",
 					"    } ",
 					"    ",
-					"    if(pm.info.requestName == 'POST - Criar lead list') {",
+					"    if(pm.info.requestName == 'Criar lead') {",
 					"        let lead_lists_id = pm.response.json().data.id;",
 					"        pm.environment.set(\"leads_lists_id\", lead_lists_id);",
 					"    }",
