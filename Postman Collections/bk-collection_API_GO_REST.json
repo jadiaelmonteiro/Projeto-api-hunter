@@ -241,7 +241,7 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "buscar todos os usuários",
 							"id": "a7fbdcad-1d48-46c2-847c-d3be493a4a6e",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -484,19 +484,19 @@
 	],
 	"variable": [
 		{
-			"id": "55cd8f42-9045-4692-b151-879b19b17009",
+			"id": "ceaf84d5-a034-461b-9bce-a690114dfdc6",
 			"key": "id_user",
 			"value": "2861508",
 			"type": "string"
 		},
 		{
-			"id": "11a27da4-0aa1-4aa2-a152-61bb5aadf5ca",
+			"id": "0b5e015a-a80d-4698-96cd-5efea94ef6ab",
 			"key": "id_post",
 			"value": "44483",
 			"type": "string"
 		},
 		{
-			"id": "4a814f9d-e3c5-488f-bec3-2bb8a79d8a42",
+			"id": "c2d90068-b29e-4608-a647-ea0ab4a65284",
 			"key": "id_comentario",
 			"value": "40179",
 			"type": "string"
