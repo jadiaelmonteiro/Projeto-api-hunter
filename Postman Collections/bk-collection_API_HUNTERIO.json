@@ -1,0 +1,413 @@
+{
+	"info": {
+		"_postman_id": "14c4ad9d-b19b-4e89-b580-8bbbc7e350a0",
+		"name": "API Hunter",
+		"description": "Coleção de testes da API Hunter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Leads",
+			"item": [
+				{
+					"name": "Recuperar todos leads cadastrados",
+					"item": [
+						{
+							"name": "GET - Todos os leads",
+							"_postman_id": "4ffa38f1-d2f3-4ace-9642-9d8441da6f64",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url_base}}/leads"
+							},
+							"response": []
+						},
+						{
+							"name": "GET - Lead pelo id",
+							"_postman_id": "535d7b73-3d50-4f26-936a-2e1309c30c02",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url_base}}/leads/{{lead_id}}"
+							},
+							"response": []
+						}
+					],
+					"_postman_id": "5b47402e-c933-4e62-b9a9-9d54dcde9b87",
+					"description": "Caso de testes para pegar leads",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "84b2f297-9503-49c0-9be8-da80f6aa8548",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "71c88941-f63e-4af7-9198-7af7fa5b0acd",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code deve ser 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code deve conter string 'OK'\", function () {",
+									"    pm.response.to.have.status(\"Ok\");",
+									"});",
+									"",
+									"pm.test(\"Resposta não pode ultrapassar 2 segundos\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+									"});"
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Criar novo lead",
+					"item": [
+						{
+							"name": "Criar lead",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "56b7da04-7029-492b-98a0-396d8c427369",
+										"exec": [
+											"pm.iterationData.get(\"email_lead\");\r",
+											"pm.iterationData.get(\"name_lead\");\r",
+											"pm.iterationData.get(\"last_name\");\r",
+											"pm.iterationData.get(\"position_name\");\r",
+											"pm.iterationData.get(\"company_name\");"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"_postman_id": "28e5c188-95c7-4379-bbf9-bf029320e7c4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"{{email_lead}}\",\r\n  \"first_name\": \"{{name_lead}}\",\r\n  \"last_name\": \"{{last_name}}\",\r\n  \"position\": \"{{position_name}}\",\r\n  \"company\": \"{{company_name}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url_base}}/leads"
+							},
+							"response": []
+						}
+					],
+					"_postman_id": "2e44d223-6e8c-4861-ac0f-6ce0936ccf62",
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Editar lead",
+					"item": [
+						{
+							"name": "Editar lead",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "97ee3afa-e462-4863-9342-81f31d803364",
+										"exec": [
+											"pm.iterationData.get(\"edit_email_lead\");\r",
+											"pm.iterationData.get(\"edit_name_lead\");\r",
+											"pm.iterationData.get(\"edit_last_name\");\r",
+											"pm.iterationData.get(\"edit_position_name\");\r",
+											"pm.iterationData.get(\"edit_company_name\");"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"_postman_id": "c89171d9-0019-405b-994d-1716a48d16f0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"{{edit_email_lead}}\",\r\n  \"first_name\": \"{{edit_name_lead}}\",\r\n  \"last_name\": \"{{edit_last_name}}\",\r\n  \"position\": \"{{edit_position_name}}\",\r\n  \"company\": \"{{edit_company_name}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url_base}}/leads/{{lead_id}}"
+							},
+							"response": []
+						}
+					],
+					"_postman_id": "af31b156-dab0-4463-9075-df26df062e57",
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Excluir lead",
+					"item": [
+						{
+							"name": "Excluir lead",
+							"_postman_id": "e59e5c7f-6480-4a77-99e6-330b7207de67",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{url_base}}/leads/{{lead_id}}"
+							},
+							"response": []
+						}
+					],
+					"_postman_id": "66077174-0cff-491e-b4d3-49a7cfc70f40",
+					"_postman_isSubFolder": true
+				}
+			],
+			"_postman_id": "fd013a71-46a5-4735-a48e-1f2b48bbd40d",
+			"description": "Suites de testes para leads"
+		},
+		{
+			"name": "Leads list",
+			"item": [
+				{
+					"name": "Recuperar todas listas de leads cadastradas",
+					"item": [
+						{
+							"name": "GET - Todos os leads list",
+							"_postman_id": "df3903df-5568-4914-9c40-f20960ee350d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url_base}}/leads_lists"
+							},
+							"response": []
+						},
+						{
+							"name": "GET - Pegar lead list pelo id",
+							"_postman_id": "54f1be19-16f7-4bb4-bf14-7c8b92ed25df",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url_base}}/leads_lists/{{leads_lists_id}}"
+							},
+							"response": []
+						}
+					],
+					"_postman_id": "eecbf0e0-8f04-46eb-ad48-26762a2f2d58",
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Criar nova lista de lead",
+					"item": [
+						{
+							"name": "POST - Criar lead list",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "ce833d00-80b4-4dc7-9efd-a61192759834",
+										"exec": [
+											"pm.iterationData.get(\"name_lead_list\");"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"_postman_id": "16c1121a-deaa-4e26-a287-4472c1e0adc2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"{{name_lead_list}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url_base}}/leads_lists"
+							},
+							"response": []
+						}
+					],
+					"_postman_id": "29ad7ddc-0b00-4737-b9ed-38928e5bddc4",
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Editar lista de lead",
+					"item": [
+						{
+							"name": "New Request",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "bae224c0-d90a-42c9-a89f-3399cbd17f59",
+										"exec": [
+											"pm.iterationData.get(\"edit_lead_list_name\");"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"_postman_id": "edf635c9-8021-49b7-a27c-bdc359f9c8be",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"{{edit_lead_list_name}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url_base}}/leads_lists/{{leads_lists_id}}"
+							},
+							"response": []
+						}
+					],
+					"_postman_id": "18e4e64e-8ac8-49db-b7b5-b634dce41b83",
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Excluir lista de lead",
+					"item": [
+						{
+							"name": "DELETE - Excluir lead list",
+							"_postman_id": "ecec2c3e-845e-464a-825f-38552018260e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{url_base}}/leads_lists/{{leads_lists_id}}"
+							},
+							"response": []
+						}
+					],
+					"_postman_id": "a952cc8a-dae4-46a6-bd80-f251a2aa3b3c",
+					"_postman_isSubFolder": true
+				}
+			],
+			"_postman_id": "719d726e-446c-4d3b-a367-27a095ff25e4",
+			"description": "Suites de testes para leads list"
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": {
+			"in": "query",
+			"value": "5e0d0986ff449549ef852ee77eb77ba644e79b27",
+			"key": "api_key"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "8a8afdc1-aec1-4b6c-a566-4038a49db545",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "b6efd30c-cd8d-4e70-8295-717abbf60d54",
+				"type": "text/javascript",
+				"exec": [
+					"//Teste para requisisão GET",
+					"if(pm.request.method == 'GET') ",
+					"{",
+					"    pm.test(\"Status code deve ser 200\", () => {",
+					"        pm.response.to.have.status(200);",
+					"    });",
+					"",
+					"    pm.test(\"Status code deve conter string 'OK'\", () => {",
+					"        pm.response.to.have.status(\"Ok\");",
+					"    });",
+					"}",
+					"",
+					"//Teste para requisisão GET E POST",
+					"if(pm.request.method == 'POST' || 'GET') ",
+					"{",
+					"    pm.test(\"Resposta não pode ultrapassar 2 segundos\", () => {",
+					"        pm.expect(pm.response.responseTime).to.be.below(2000);",
+					"    });",
+					"}",
+					"",
+					"//Teste para requisisão POST",
+					"if(pm.request.method == 'POST') ",
+					"{",
+					"    pm.test(\"Status code deve ser 200, 201 ou 202\", () => {",
+					"        pm.response.to.have.status(200,201,202);",
+					"    });",
+					"",
+					"    pm.test(\"Status code deve conter string 'OK'\", () => {",
+					"        pm.response.to.have.status(\"Created\");",
+					"    });",
+					"}",
+					"",
+					"//Teste para requisisão PUT e DELETE",
+					"if(pm.request.method == 'PUT' || 'DELETE') ",
+					"{",
+					"    pm.test(\"Status code deve ser 204\", () => {",
+					"        pm.response.to.have.status(204);",
+					"    });",
+					"",
+					"",
+					"    pm.test(\"A requisição deve retronar vazio\", () => {",
+					"        pm.expect(pm.response.text()).to.include(\"\");",
+					"    });",
+					"}",
+					"",
+					"",
+					"",
+					"",
+					""
+				]
+			}
+		}
+	]
+}
