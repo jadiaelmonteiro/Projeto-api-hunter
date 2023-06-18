@@ -95,7 +95,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"email\": \"tes@as.com\"\r\n}",
+									"raw": "{\r\n  \"email\": \"{{email_lead}}\",\r\n  \"first_name\": \"{{name_lead}}\",\r\n  \"last_name\": \"{{last_name}}\",\r\n  \"position\": \"{{position_name}}\",\r\n  \"company\": \"{{company_name}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
