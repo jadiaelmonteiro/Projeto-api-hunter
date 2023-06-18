@@ -326,7 +326,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "c1b1837c-ae90-4ea3-9749-28aae19c39a0",
+				"id": "122d00c5-25ad-465e-a83e-a42b8d73f9d4",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -336,11 +336,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "5b4bef00-1c73-46a0-b09f-cb8aad5a9885",
+				"id": "6886415c-cbf4-4b94-8488-2ec63620329a",
 				"type": "text/javascript",
 				"exec": [
 					"//Teste para requisisão GET E POST",
-					"if(pm.request.method == \"POST\" || pm.request.method \"GET\") {",
+					"if(pm.request.method == \"POST\" || pm.request.method == \"GET\") {",
 					"",
 					"    if(pm.info.requestName == 'Criar lead') {",
 					"        let lead_id = pm.response.json().data.id;",
