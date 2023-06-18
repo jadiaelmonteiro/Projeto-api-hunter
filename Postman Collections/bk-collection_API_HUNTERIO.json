@@ -95,7 +95,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"email\": \"tes@as\"\r\n}",
+									"raw": "{\r\n  \"email\": \"tes@as.com\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
